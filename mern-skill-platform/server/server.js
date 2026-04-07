@@ -33,6 +33,10 @@ app.use('/api/notifications', require('./routes/notificationRoutes'));
 app.use('/api/leaderboard',   require('./routes/leaderboardRoutes'));
 app.use('/api/resources',     require('./routes/resourceRoutes'));
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
 app.get('/api/health', (req, res) => res.json({ status: 'OK', timestamp: new Date() }));
 
 app.use(notFound);
